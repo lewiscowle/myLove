@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#fff7f0" />
+  <title>You mean everything to me</title>
+  <style>
+    :root{
+      --bg1: #fff7f0;
+      --bg2: #ffeedd;
+      --text: #3b2215;
+      --accent: #b25a2a;
+      --button-bg: #ffffff;
+      --button-border: #b25a2a;
+      --safe-padding: 16px;
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      background: linear-gradient(180deg, var(--bg1), var(--bg2));
+      color: var(--text);
+    }
+
+    .wrap{
+      min-height:100%;
+      box-sizing:border-box;
+      padding: calc(var(--safe-padding) + env(safe-area-inset-top)) var(--safe-padding) calc(var(--safe-padding) + env(safe-area-inset-bottom));
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:24px;
+      text-align:center;
+    }
+
+    .message{
+      max-width:880px;
+      width:100%;
+      padding: 18px 20px;
+      border-radius:14px;
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(6px) saturate(120%);
+      -webkit-backdrop-filter: blur(6px) saturate(120%);
+      box-shadow: 0 6px 20px rgba(11,11,11,0.08);
+    }
+
+    .message p{
+      margin:0;
+      font-size: clamp(20px, 5.2vw, 28px);
+      line-height:1.22;
+      font-weight:600;
+    }
+
+    .sub{
+      margin-top:8px;
+      font-size: clamp(14px, 3.6vw, 16px);
+      font-weight:400;
+      opacity:0.92;
+    }
+
+    .controls{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:center;
+      width:100%;
+    }
+
+    .btn{
+      -webkit-tap-highlight-color: transparent;
+      appearance:none;
+      border: 2px solid var(--button-border);
+      background: var(--button-bg);
+      color: var(--accent);
+      padding: 14px 38px;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+      cursor:pointer;
+      box-shadow: 0 8px 20px rgba(178,90,42,0.12);
+      transition: transform .12s ease, box-shadow .12s ease;
+      touch-action: manipulation;
+    }
+
+    .btn:active{ transform: translateY(1px) scale(.998); box-shadow: 0 6px 14px rgba(178,90,42,0.10); }
+
+    /* make link fill button when using <a> */
+    .btn-link{
+      text-decoration:none;
+      display:inline-block;
+    }
+
+    /* small helper for visually-hidden text (accessibility) */
+    .sr-only{
+      position:absolute;
+      left:-10000px;
+      top:auto;
+      width:1px;
+      height:1px;
+      overflow:hidden;
+    }
+
+    /* footer note */
+    .note{
+      margin-top:8px;
+      font-size:12px;
+      opacity:0.7;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap" role="main">
+    <section class="message" aria-labelledby="main-heading">
+      <h1 id="main-heading" class="sr-only">Message</h1>
+      <p>“You mean everything to me. You give me all the reasons I need to keep going.”</p>
+      <div class="sub">A small page of a big feeling.</div>
+    </section>
+
+    <div class="controls" role="navigation" aria-label="Primary actions">
+      <a class="btn-link" href="https://bananatree.co.uk/restaurants/haywards-heath" target="_blank" rel="noopener noreferrer" aria-label="Open Banana Tree Haywards Heath">
+        <button class="btn" type="button">TEA</button>
+      </a>
+    </div>
+
+    <div class="note" aria-hidden="true">Tap TEA to visit Banana Tree — opens in a new tab.</div>
+  </main>
+</body>
+</html>
